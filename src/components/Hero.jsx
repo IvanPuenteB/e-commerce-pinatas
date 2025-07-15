@@ -11,7 +11,7 @@ export default function Hero() {
             ¡Descubre la magia de nuestras piñatas!
           </h1>
           <p className="text-gray-600 mb-6">
-            En Creaciones Axje, cada piñata es una obra de arte diseñada para hacer tus celebraciones inolvidables. Elige entre una variedad de estilos y personalizaciones que se adaptan a tus necesidades.
+            En Creaciones Axjey, cada piñata es una obra de arte diseñada para hacer tus celebraciones inolvidables. Elige entre una variedad de estilos y personalizaciones que se adaptan a tus necesidades.
           </p>
           <div className="flex gap-4">
             <Link

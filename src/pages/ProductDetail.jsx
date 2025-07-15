@@ -15,6 +15,7 @@ export default function ProductDetail() {
         _id,
         title,
         price,
+        image,
         description,
         "imageUrl": image.asset->url
       }`, { slug })

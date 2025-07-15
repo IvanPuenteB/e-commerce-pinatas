@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="bg-gray-800 text-white mt-10">
       <div className="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
-          <h2 className="font-bold text-lg">Creaciones Axje</h2>
+          <h2 className="font-bold text-lg">Creaciones Axjey</h2>
           <p className="text-sm mt-2">Los mejores arreglos y piñatas para tu celebración.</p>
         </div>
         <div>

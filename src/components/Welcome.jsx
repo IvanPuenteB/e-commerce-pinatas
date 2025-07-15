@@ -5,9 +5,9 @@ export default function Welcome() {
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
         {/* Texto */}
         <div className="md:w-1/2">
-          <h2 className="text-3xl font-bold mb-4">Creaciones Axje</h2>
+          <h2 className="text-3xl font-bold mb-4">Creaciones Axjey</h2>
           <p className="text-gray-300">
-            Bienvenido a Creaciones Axje, donde encontrarás las mejores piñatas y arreglos florales. Nos dedicamos a convertir tus celebraciones en momentos inolvidables.
+            Bienvenido a Creaciones Axjey, donde encontrarás las mejores piñatas y arreglos florales. Nos dedicamos a convertir tus celebraciones en momentos inolvidables.
           </p>
         </div>
 
