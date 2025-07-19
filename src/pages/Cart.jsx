@@ -13,7 +13,7 @@ export default function Cart() {
 });
 
 const [showConfirmButton, setShowConfirmButton] = useState(false);
-const [whatsappMessage, setWhatsappMessage] = useState('');
+const [_, setWhatsappMessage] = useState('');
 
 const handleChange = (e) => {
   setContactInfo({
