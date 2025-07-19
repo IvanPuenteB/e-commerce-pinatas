@@ -30,23 +30,28 @@ export default function ProductGallery() {
   return (
   <>
     <Hero />
-      {/* Sección: Galería de productos */}
-  <section className="py-10">
+      {/* Sección: Nuestaras piñatas de productos */}
+   <section className="py-10 bg-white">
     <div className="max-w-6xl mx-auto px-4">
-      <h2 className="text-3xl font-bold text-center mb-6">Nuestras Piñatas</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {products.map((product) =>
+      <h2 className="text-3xl font-bold text-center mb-8">Nuestras Piñatas</h2>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {products.slice(0, 6).map((product) =>
           product.slug?.current && (
             <Link to={`/product/${product.slug.current}`} key={product._id}>
-              <div className="border rounded-xl shadow-md p-4 hover:shadow-lg transition">
+              <div className="flex flex-col h-full border rounded-xl shadow hover:shadow-lg transition overflow-hidden">
                 <img
-                  src={urlFor(product.image).width(400).url()}
+                  src={urlFor(product.image).width(600).height(300).url()}
                   alt={product.title}
-                  className="h-48 w-full object-cover rounded mb-4"
+                  className="h-48 w-full object-cover"
                 />
-                <h2 className="text-xl font-semibold">{product.title}</h2>
-                <p className="text-gray-600">${product.price}</p>
-                <p className="text-sm mt-2">{product.description}</p>
+                <div className="p-4 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-xl font-semibold mb-1">{product.title}</h3>
+                    <p className="text-gray-600 font-medium mb-2">${product.price}</p>
+                    <p className="text-sm text-gray-500 line-clamp-2">{product.description}</p>
+                  </div>
+                </div>
               </div>
             </Link>
           )

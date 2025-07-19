@@ -18,7 +18,7 @@ export default function Header() {
         <nav className="space-x-4">
           <Link to="/" className="hover:underline">Inicio Rápido</Link>
           <Link to="/nuestras-pinatas" className="hover:underline">Nuestras Piñatas</Link>
-          <Link to="/" className="hover:underline">Arreglos Florales</Link>
+          <Link to="/arreglos-florales" className="hover:underline">Arreglos Florales</Link>
         </nav>
 
         {/* Carrito + Botón Comprar */}

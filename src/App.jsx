@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ProductGallery from './pages/ProductGallery';
 import ProductDetail from './pages/ProductDetail';
 import NuestrasPinatas from './pages/NuestrasPinatas';
+import ArreglosFlorales from './pages/ArreglosFlorales';
 import Cart from './pages/Cart';  
 import Layout from './layout/Layout';
 
@@ -23,7 +24,8 @@ function App() {
               <Route path="/" element={<ProductGallery />} />
               <Route path="/product/:slug" element={<ProductDetail />} />
               <Route path="/cart" element={<Cart />} />
-              <Route path="/nuestras-pinatas" element={<NuestrasPinatas />} />
+              <Route path="/nuestras-pinatas" element={<NuestrasPinatas />} />  
+              <Route path="/arreglos-florales" element={<ArreglosFlorales />} />
             </Routes>
           </div>
         </Layout>
