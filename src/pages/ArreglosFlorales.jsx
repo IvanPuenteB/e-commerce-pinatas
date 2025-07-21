@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { useInView, InView } from 'react-intersection-observer';
 import { client } from '../cms/client';
+import ItemCard from '../components/ItemCard';
 
 export default function NuestrasFlores() {
   const [items, setItems] = useState([]);
@@ -47,7 +48,7 @@ export default function NuestrasFlores() {
     setPage(1);
   }, []);
 
-  // Parallax effect para columnas
+  // Efecto parallax en scroll
   useEffect(() => {
     const handleScroll = () => {
       const cols = document.querySelectorAll('[data-speed]');
@@ -70,31 +71,42 @@ export default function NuestrasFlores() {
 
       <div className="grid grid-cols-3 gap-6 relative overflow-hidden">
         {[0, 1, 2].map((colIndex) => (
-          <div key={colIndex} className="flex flex-col gap-6" data-speed={colIndex === 0 ? '0.3' : colIndex === 2 ? '0.2' : undefined}>
-            {items.filter((_, i) => i % 3 === colIndex).map((item) => (
-              <InView triggerOnce threshold={0.15} key={item._id}>
-                {({ ref: inViewRef, inView: isVisible }) => (
-                  <div
-                    ref={inViewRef}
-                    className={`rounded-xl shadow overflow-hidden transform transition-all duration-700 ease-out
-                      ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}
-                    `}
-                  >
-                    <img
-                      src={item.imageUrl}
-                      alt={item.title}
-                      className="w-full h-64 object-cover"
-                    />
-                    <div className="p-2 text-center font-medium">{item.title}</div>
-                  </div>
-                )}
-              </InView>
-            ))}
+          <div
+            key={colIndex}
+            className="flex flex-col gap-6"
+            data-speed={colIndex === 0 ? '0.3' : colIndex === 2 ? '0.2' : undefined}
+          >
+            {items
+              .filter((_, i) => i % 3 === colIndex)
+              .map((item, colIndex) => (
+                <InView triggerOnce threshold={0.15} key={item._id}>
+                  {({ ref: inViewRef, inView: isVisible }) => {
+                    const direction =
+                      colIndex === 0
+                        ? '-translate-x-10'
+                        : colIndex === 2
+                        ? 'translate-x-10'
+                        : 'translate-y-10';
+
+                    return (
+                      <div
+                        ref={inViewRef}
+                        className={`transition-all duration-700 ease-out transform ${
+                          isVisible
+                            ? 'opacity-100 translate-y-0 translate-x-0'
+                            : `opacity-0 ${direction}`
+                        }`}
+                      >
+                        <ItemCard item={item} />
+                      </div>
+                    );
+                  }}
+                </InView>
+              ))}
           </div>
         ))}
       </div>
 
-      {/* Sentinel para infinite scroll */}
       <div ref={ref} className="h-10 mt-10 text-center text-gray-400">
         {isLoading ? 'Cargando más flores...' : ''}
       </div>

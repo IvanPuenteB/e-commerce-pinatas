@@ -1,6 +1,7 @@
 // src/components/Header.jsx
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/useCart';
+import logo from '../assets/images/logo.png';
 
 export default function Header() {
   const { cartItems } = useCart();
@@ -11,14 +12,13 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="text-xl font-bold">
-          Creaciones Axjey
+          <img src={logo} alt="Creaciones Axjey" className="h-24" />
         </Link>
-
         {/* Navegación */}
-        <nav className="space-x-4">
+        <nav className="space-x-4 text-2xl font-semibold text-gray-800 flex items-center">
           <Link to="/" className="hover:underline">Inicio Rápido</Link>
-          <Link to="/nuestras-pinatas" className="hover:underline">Nuestras Piñatas</Link>
-          <Link to="/arreglos-florales" className="hover:underline">Arreglos Florales</Link>
+          <Link to="/nuestras-pinatas" className="hover:underline">Galeria de Piñatas</Link>
+          <Link to="/arreglos-florales" className="hover:underline">Galeria de Flores</Link>
         </nav>
 
         {/* Carrito + Botón Comprar */}
@@ -27,7 +27,7 @@ export default function Header() {
           
 
           {/* Carrito con contador */}
-          <Link to="/cart" className="relative text-xl hover:opacity-80">
+          <Link to="/cart" className="relative text-2xl hover:opacity-80 ">
             🛒
             {totalItems > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full px-2">

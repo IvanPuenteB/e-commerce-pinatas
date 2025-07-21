@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import imageOnePiece from '../assets/images/Onepice.jpg';
 
+
 export default function Hero() {
   return (
     <section className="bg-white py-12">
@@ -15,13 +16,7 @@ export default function Hero() {
           </p>
           <div className="flex gap-4">
             <Link
-              to="/"
-              className="bg-black text-white px-6 py-2 rounded hover:bg-gray-800 transition"
-            >
-              Comprar
-            </Link>
-            <Link
-              to="/"
+              to="/nuestras-pinatas"
               className="border border-black text-black px-6 py-2 rounded hover:bg-gray-100 transition"
             >
               Explorar
