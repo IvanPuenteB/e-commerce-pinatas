@@ -68,7 +68,7 @@ export default function ProductGallery() {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="flex flex-col h-full border rounded-xl shadow hover:shadow-lg transition overflow-hidden bg-white"
+                    className="flex flex-col h-full rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition overflow-hidden bg-white"
                   >
                     <img
                       src={urlFor(product.image).width(600).height(300).url()}
@@ -96,7 +96,7 @@ export default function ProductGallery() {
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">Nuestras Flores</h2>
           <div className="flex justify-end items-center mb-6">
-            <Link to="/arreglos-florales" className="text-pink-600 hover:underline text-sm font-medium">
+            <Link to="/arreglos-florales" className="text-pink-600 hover:underline  text-sm font-medium">
               Ver todas →
             </Link>
           </div>
@@ -108,7 +108,7 @@ export default function ProductGallery() {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="flex flex-col h-full border rounded-xl shadow hover:shadow-lg transition overflow-hidden bg-white"
+                    className="flex flex-col h-full rounded-xl shadow hover:shadow-lg hover:scale-105 transition overflow-hidden bg-white"
                   >
                     <img
                       src={urlFor(product.image).width(600).height(300).url()}

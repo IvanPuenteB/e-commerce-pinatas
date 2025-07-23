@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { client } from '../cms/client';
 import { useCart } from '../context/useCart';
+import { Link } from 'react-router-dom';
+import { IoArrowBackCircleOutline } from "react-icons/io5";
 
 export default function ProductDetail() {
   const { slug } = useParams();
@@ -28,12 +30,19 @@ export default function ProductDetail() {
   if (!product) return <p className="text-center p-10">Cargando producto...</p>;
 
   return (
+  
+    <>
+    <div className="mt-8 text-end">
+        <Link to="/nuestras-pinatas" className="text-black-600 text-4xl">
+          <IoArrowBackCircleOutline className="inline mr-2" />
+        </Link>
+      </div>
+
     <div className="max-w-4xl mx-auto p-6">
       <img
         src={product.imageUrl}
         alt={product.title}
-        className="w-full h-auto object-contain rounded-xl shadow mb-6"
-      />
+        className="w-full h-auto object-contain rounded-xl shadow mb-6" />
       <h1 className="text-3xl font-bold mb-2">{product.title}</h1>
       <p className="text-gray-700 text-lg mb-4">{product.description}</p>
       <p className="text-2xl font-semibold text-green-600">${product.price}</p>
@@ -44,5 +53,6 @@ export default function ProductDetail() {
         Agregar al carrito 🛒
       </button>
     </div>
+    </>
   );
 }

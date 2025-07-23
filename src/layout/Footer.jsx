@@ -1,4 +1,5 @@
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaTiktok } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   return (
@@ -10,9 +11,7 @@ export default function Footer() {
         </div>
         <div>
           <div className="mb-4 place-items-center">
-            <h3 className="font-semibold mb-4">Contacto</h3>
-          <p className="text-sm mb-1">Tel: 1800-123-4567</p>
-          <p className="text-sm mb-4">info@creacionesaxje.com</p>
+            <h2 className="font-bold text-lg">Contacto</h2>
           </div>
           
           <div className="flex space-x-4">
@@ -35,22 +34,22 @@ export default function Footer() {
               <FaInstagram className="text-white" size={20} />
             </a>
             <a
-              href="https://twitter.com/creacionesaxjey"
+              href="https://X.com/creacionesaxjey"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Twitter"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-700 hover:bg-blue-400 transition-colors"
+              aria-label="X"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-700 hover:bg-gray-900 transition-colors"
             >
-              <FaTwitter className="text-white" size={20} />
+              <FaXTwitter className="text-white" size={20} />
             </a>
             <a
-              href="https://linkedin.com/company/creacionesaxjey"
+              href="https://www.tiktok.com/@nallelypuente17?is_from_webapp=1&sender_device=pc"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-700 hover:bg-blue-700 transition-colors"
+              aria-label="TikTok"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-700 hover:bg-gradient-to-r from-red-600 to-blue-800 transition-colors"
             >
-              <FaLinkedinIn className="text-white" size={20} />
+              <FaTiktok className="text-white" size={20} />
             </a>
           </div>
         </div>
