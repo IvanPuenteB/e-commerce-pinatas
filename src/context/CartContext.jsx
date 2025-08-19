@@ -16,7 +16,7 @@ useEffect(() => {
 
 
   const addToCart = (product) => {
-    console.log("Producto agregado al carrito:", product);
+    // console.log("Producto agregado al carrito:", product);
     setCartItems((prev) => {
       const existing = prev.find((item) => item._id === product._id);
       if (existing) {

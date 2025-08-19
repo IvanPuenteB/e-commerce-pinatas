@@ -19,10 +19,11 @@ export default function ProductDetail() {
         price,
         image,
         description,
+        category,
         "imageUrl": image.asset->url
       }`, { slug })
       .then((data) => {
-        console.log("Producto recibido:", data);
+        // console.log("Producto recibido:", data);
         setProduct(data);
       });
   }, [slug]);
@@ -33,9 +34,12 @@ export default function ProductDetail() {
   
     <>
     <div className="mt-8 text-end">
-        <Link to="/nuestras-pinatas" className="text-black-600 text-4xl">
-          <IoArrowBackCircleOutline className="inline mr-2" />
-        </Link>
+         <Link 
+    to={product.category === "Flores" ? "/arreglos-florales" : "/Nuestras-Pinatas"} 
+    className="text-black-600 text-4xl"
+  >
+    <IoArrowBackCircleOutline className="inline mr-2" />
+  </Link>
       </div>
 
     <div className="max-w-4xl mx-auto p-6">

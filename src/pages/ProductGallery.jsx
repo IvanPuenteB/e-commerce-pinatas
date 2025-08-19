@@ -24,7 +24,7 @@ export default function ProductGallery() {
         }
       }`)
       .then((data) => {
-        console.log("Piñatas cargadas:", data);
+        // console.log("Piñatas cargadas:", data);
         setPinatas(data);
       });
 
@@ -40,7 +40,7 @@ export default function ProductGallery() {
         }
       }`)
       .then((data) => {
-        console.log("Flores cargadas:", data);
+        // console.log("Flores cargadas:", data);
         setFlores(data);
       });
   }, []);
