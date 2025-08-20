@@ -1,7 +1,7 @@
 // src/components/Header.jsx
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/useCart';
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/Logo.png';
 
 export default function Header() {
   const { cartItems } = useCart();
