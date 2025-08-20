@@ -1,5 +1,5 @@
 import imageKitty from '../assets/images/kitty_flores.jpg';
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/Logo.png';
 
 export default function Welcome() {
   return (
