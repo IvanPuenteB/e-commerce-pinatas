@@ -1,4 +1,4 @@
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaTiktok } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaTiktok, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
@@ -24,7 +24,7 @@ export default function Footer() {
             >
               <FaFacebookF className="text-white" size={20} />
             </a>
-            <a
+            {/* <a
               href="https://instagram.com/creacionesaxjey"
               target="_blank"
               rel="noopener noreferrer"
@@ -32,8 +32,8 @@ export default function Footer() {
               className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-700 hover:bg-pink-600 transition-colors"
             >
               <FaInstagram className="text-white" size={20} />
-            </a>
-            <a
+            </a> */}
+            {/* <a
               href="https://X.com/creacionesaxjey"
               target="_blank"
               rel="noopener noreferrer"
@@ -41,7 +41,7 @@ export default function Footer() {
               className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-700 hover:bg-gray-900 transition-colors"
             >
               <FaXTwitter className="text-white" size={20} />
-            </a>
+            </a> */}
             <a
               href="https://www.tiktok.com/@nallelypuente17?is_from_webapp=1&sender_device=pc"
               target="_blank"
@@ -51,12 +51,21 @@ export default function Footer() {
             >
               <FaTiktok className="text-white" size={20} />
             </a>
+
+            <a
+              href="https://wa.me/528186038837"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-700 hover:bg-gradient-to-r from-green-600 to-green-800 transition-colors"
+            >
+              <FaWhatsapp className="text-white text-center" size={25} />
+            </a>
           </div>
         </div>
         <div>
           <h3 className="font-semibold">Legal</h3>
-          <p className="text-sm">Política de privacidad</p>
-          <p className="text-sm">Términos de servicio</p>
+          <p className="text-sm hover:underline"><a href="/Terminos">Términos y Condiciones</a></p>
         </div>
       </div>
     </footer>
