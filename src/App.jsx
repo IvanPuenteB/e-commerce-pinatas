@@ -5,6 +5,7 @@ import ProductDetail from './pages/ProductDetail';
 import NuestrasPinatas from './pages/NuestrasPinatas';
 import ArreglosFlorales from './pages/ArreglosFlorales';
 import ContactUs from './pages/ContactUs';
+import Terminos from './pages/Terminos';
 import Cart from './pages/Cart';  
 import Layout from './layout/Layout';
 
@@ -28,6 +29,7 @@ function App() {
               <Route path="/nuestras-pinatas" element={<NuestrasPinatas />} />  
               <Route path="/arreglos-florales" element={<ArreglosFlorales />} />
               <Route path="/contacto" element={<ContactUs />} />
+              <Route path="/Terminos" element={<Terminos />} />
             </Routes>
           </div>
         </Layout>

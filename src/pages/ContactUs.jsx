@@ -26,7 +26,7 @@ export default function ContactUs() {
           <div className="flex items-center space-x-2">
             <input type="checkbox" id="terms" />
             <label htmlFor="terms" className="text-sm">
-              Acepto los <a href="#" className="underline">Términos</a>
+              Acepto los <a href="/Terminos" className="underline">Términos</a>
             </label>
           </div>
           <button type="submit" className="bg-black text-white px-6 py-2 rounded">Enviar</button>
