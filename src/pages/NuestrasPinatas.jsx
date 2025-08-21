@@ -139,33 +139,34 @@ export default function NuestrasPiñatas() {
         Descubre nuestras piñatas personalizadas únicas
       </p>
 
-     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 relative overflow-hidden">
-  {/* Vista 1 columna (móvil) */}
-  <div className="flex flex-col gap-6 sm:hidden">
-    {items.map((item) => (
-      <ItemCard key={item._id} item={item} />
-    ))}
-  </div>
+     {/* Vista móvil: 1 columna */}
+<div className="sm:hidden flex flex-col gap-6 relative overflow-hidden">
+  {items.map((item) => (
+    <ItemCard key={item._id} item={item} />
+  ))}
+</div>
 
-  {/* Vista 3 columnas (desktop/tablet) */}
-  <div className="hidden sm:flex flex-col gap-6" data-speed="0.3">
+{/* Vista desktop/tablet: 3 columnas */}
+<div className="hidden sm:grid sm:grid-cols-3 gap-6 relative overflow-hidden">
+  <div className="flex flex-col gap-6" data-speed="0.3">
     {items.filter((_, i) => i % 3 === 0).map((item) => (
       <ItemCard key={item._id} item={item} />
     ))}
   </div>
 
-  <div className="hidden sm:flex flex-col gap-6">
+  <div className="flex flex-col gap-6">
     {items.filter((_, i) => i % 3 === 1).map((item) => (
       <ItemCard key={item._id} item={item} />
     ))}
   </div>
 
-  <div className="hidden sm:flex flex-col gap-6" data-speed="0.2">
+  <div className="flex flex-col gap-6" data-speed="0.2">
     {items.filter((_, i) => i % 3 === 2).map((item) => (
       <ItemCard key={item._id} item={item} />
     ))}
   </div>
 </div>
+
 
 
       {/* Sentinel */}
