@@ -139,28 +139,34 @@ export default function NuestrasPiñatas() {
         Descubre nuestras piñatas personalizadas únicas
       </p>
 
-      <div className="grid grid-cols-3 gap-6 relative overflow-hidden">
-        {/* Columna izquierda con parallax */}
-        <div className="flex flex-col gap-6" data-speed="0.3">
-          {items.filter((_, i) => i % 3 === 0).map((item) => (
-            <ItemCard key={item._id} item={item} />
-          ))}
-        </div>
+     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 relative overflow-hidden">
+  {/* Vista 1 columna (móvil) */}
+  <div className="flex flex-col gap-6 sm:hidden">
+    {items.map((item) => (
+      <ItemCard key={item._id} item={item} />
+    ))}
+  </div>
 
-        {/* Columna central */}
-        <div className="flex flex-col gap-6">
-          {items.filter((_, i) => i % 3 === 1).map((item) => (
-            <ItemCard key={item._id} item={item} />
-          ))}
-        </div>
+  {/* Vista 3 columnas (desktop/tablet) */}
+  <div className="hidden sm:flex flex-col gap-6" data-speed="0.3">
+    {items.filter((_, i) => i % 3 === 0).map((item) => (
+      <ItemCard key={item._id} item={item} />
+    ))}
+  </div>
 
-        {/* Columna derecha */}
-        <div className="flex flex-col gap-6" data-speed="0.2">
-          {items.filter((_, i) => i % 3 === 2).map((item) => (
-            <ItemCard key={item._id} item={item} />
-          ))}
-        </div>
-      </div>
+  <div className="hidden sm:flex flex-col gap-6">
+    {items.filter((_, i) => i % 3 === 1).map((item) => (
+      <ItemCard key={item._id} item={item} />
+    ))}
+  </div>
+
+  <div className="hidden sm:flex flex-col gap-6" data-speed="0.2">
+    {items.filter((_, i) => i % 3 === 2).map((item) => (
+      <ItemCard key={item._id} item={item} />
+    ))}
+  </div>
+</div>
+
 
       {/* Sentinel */}
       <div ref={ref} className="h-10 mt-10 text-center text-gray-400">

@@ -69,43 +69,65 @@ export default function NuestrasFlores() {
         Descubre nuestras flores decorativas únicas
       </p>
 
-      <div className="grid grid-cols-3 gap-6 relative overflow-hidden">
-        {[0, 1, 2].map((colIndex) => (
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 relative overflow-hidden">
+  {/* Vista 1 columna (móvil) */}
+  <div className="flex flex-col gap-6 sm:hidden">
+    {items.map((item) => (
+      <InView triggerOnce threshold={0.15} key={item._id}>
+        {({ ref: inViewRef, inView: isVisible }) => (
           <div
-            key={colIndex}
-            className="flex flex-col gap-6"
-            data-speed={colIndex === 0 ? '0.3' : colIndex === 2 ? '0.2' : undefined}
+            ref={inViewRef}
+            className={`transition-all duration-700 ease-out transform ${
+              isVisible
+                ? 'opacity-100 translate-y-0 translate-x-0'
+                : 'opacity-0 translate-y-10'
+            }`}
           >
-            {items
-              .filter((_, i) => i % 3 === colIndex)
-              .map((item, colIndex) => (
-                <InView triggerOnce threshold={0.15} key={item._id}>
-                  {({ ref: inViewRef, inView: isVisible }) => {
-                    const direction =
-                      colIndex === 0
-                        ? '-translate-x-10'
-                        : colIndex === 2
-                        ? 'translate-x-10'
-                        : 'translate-y-10';
-
-                    return (
-                      <div
-                        ref={inViewRef}
-                        className={`transition-all duration-700 ease-out transform ${
-                          isVisible
-                            ? 'opacity-100 translate-y-0 translate-x-0'
-                            : `opacity-0 ${direction}`
-                        }`}
-                      >
-                        <ItemCard item={item} />
-                      </div>
-                    );
-                  }}
-                </InView>
-              ))}
+            <ItemCard item={item} />
           </div>
+        )}
+      </InView>
+    ))}
+  </div>
+
+  {/* Vista 3 columnas (desktop/tablet) */}
+  {[0, 1, 2].map((colIndex) => (
+    <div
+      key={colIndex}
+      className="hidden sm:flex flex-col gap-6"
+      data-speed={colIndex === 0 ? '0.3' : colIndex === 2 ? '0.2' : undefined}
+    >
+      {items
+        .filter((_, i) => i % 3 === colIndex)
+        .map((item, colIndex) => (
+          <InView triggerOnce threshold={0.15} key={item._id}>
+            {({ ref: inViewRef, inView: isVisible }) => {
+              const direction =
+                colIndex === 0
+                  ? '-translate-x-10'
+                  : colIndex === 2
+                  ? 'translate-x-10'
+                  : 'translate-y-10';
+
+              return (
+                <div
+                  ref={inViewRef}
+                  className={`transition-all duration-700 ease-out transform ${
+                    isVisible
+                      ? 'opacity-100 translate-y-0 translate-x-0'
+                      : `opacity-0 ${direction}`
+                  }`}
+                >
+                  <ItemCard item={item} />
+                </div>
+              );
+            }}
+          </InView>
         ))}
-      </div>
+    </div>
+  ))}
+</div>
+
 
       <div ref={ref} className="h-10 mt-10 text-center text-gray-400">
         {isLoading ? 'Cargando más flores...' : ''}
