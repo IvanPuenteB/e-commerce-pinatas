@@ -7,6 +7,7 @@ import ArreglosFlorales from './pages/ArreglosFlorales';
 import ContactUs from './pages/ContactUs';
 import Terminos from './pages/Terminos';
 import Cart from './pages/Cart';  
+import NotFound from './pages/404NotFound';
 import Layout from './layout/Layout';
 
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
@@ -30,6 +31,7 @@ function App() {
               <Route path="/arreglos-florales" element={<ArreglosFlorales />} />
               <Route path="/contacto" element={<ContactUs />} />
               <Route path="/Terminos" element={<Terminos />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
         </Layout>
