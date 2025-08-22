@@ -54,7 +54,7 @@ ${cartItems.map((item) => `- ${item.title} x${item.quantity}`).join("\n")}`;
           decreaseQuantity={decreaseQuantity}
           removeFromCart={removeFromCart}
           clearCart={clearCart}
-        />
+        />  
       </div>
 
       {/* Columna derecha */}
