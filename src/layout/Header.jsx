@@ -23,6 +23,11 @@ export default function Header() {
           />
         </Link>
 
+        <Link to="/" className="hover:scale-105 hover:text-yellow-500 transition">
+          <div className=" md:hidden space-x-8 lg:space-x-12 text-lg lg:text-2xl font-semibold">
+            <h2 className="font-bold text-xl">Creaciones AxJey</h2>
+          </div>
+        </Link>
         {/* Menú de escritorio */}
         <nav className="hidden md:flex space-x-8 lg:space-x-12 text-lg lg:text-2xl font-semibold text-gray-800 items-center">
           <Link

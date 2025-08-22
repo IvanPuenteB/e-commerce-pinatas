@@ -1,55 +1,38 @@
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaTiktok, FaWhatsapp } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaFacebookF, FaTiktok, FaWhatsapp } from "react-icons/fa";
 
 export default function Footer() {
   return (
     <footer className="bg-gray-800 text-white mt-10">
-      <div className="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8 place-items-center">
-        <div>
-          <h2 className="font-bold text-lg">Creaciones Axjey</h2>
+      <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-8">
+
+        {/* Branding */}
+        <div className="text-center md:text-left">
+          <h2 className="font-bold text-xl">Creaciones Axjey</h2>
           <p className="text-sm mt-2">Los mejores arreglos y piñatas para tu celebración.</p>
         </div>
-        <div>
-          <div className="mb-4 place-items-center">
-            <h2 className="font-bold text-lg">Contacto</h2>
-          </div>
-          
-          <div className="flex space-x-4">
+
+        {/* Redes sociales */}
+        <div className="text-center">
+          <h3 className="font-bold text-lg mb-3">Contacto</h3>
+          <div className="flex justify-center space-x-4">
             <a
               href="https://www.facebook.com/invitacionesaxjey"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-700 hover:bg-blue-600 transition-colors"
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-700 hover:bg-blue-600 transition-colors"
             >
-              <FaFacebookF className="text-white" size={20} />
+              <FaFacebookF size={22} />
             </a>
-            {/* <a
-              href="https://instagram.com/creacionesaxjey"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-700 hover:bg-pink-600 transition-colors"
-            >
-              <FaInstagram className="text-white" size={20} />
-            </a> */}
-            {/* <a
-              href="https://X.com/creacionesaxjey"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="X"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-700 hover:bg-gray-900 transition-colors"
-            >
-              <FaXTwitter className="text-white" size={20} />
-            </a> */}
+
             <a
               href="https://www.tiktok.com/@nallelypuente17?is_from_webapp=1&sender_device=pc"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="TikTok"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-700 hover:bg-gradient-to-r from-red-600 to-blue-800 transition-colors"
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-700 hover:bg-gradient-to-r from-red-600 to-blue-800 transition-colors"
             >
-              <FaTiktok className="text-white" size={20} />
+              <FaTiktok size={22} />
             </a>
 
             <a
@@ -57,16 +40,28 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-700 hover:bg-gradient-to-r from-green-600 to-green-800 transition-colors"
+              className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-700 hover:bg-gradient-to-r from-green-600 to-green-800 transition-colors"
             >
-              <FaWhatsapp className="text-white text-center" size={25} />
+              <FaWhatsapp size={24} />
             </a>
           </div>
         </div>
-        <div>
-          <h3 className="font-semibold">Legal</h3>
-          <p className="text-sm hover:underline"><a href="/Terminos">Términos y Condiciones</a></p>
+
+        {/* Legal */}
+        <div className="text-center md:text-left">
+          <h3 className="font-semibold mb-2">Legal</h3>
+          <p className="text-sm">
+            <a href="/Terminos" className="hover:underline">
+              Términos y Condiciones
+            </a>
+          </p>
         </div>
+
+      </div>
+
+      {/* Copy */}
+      <div className="border-t border-gray-700 mt-6 pt-4 text-center text-sm text-gray-400">
+        © {new Date().getFullYear()} Creaciones Axjey. Todos los derechos reservados.
       </div>
     </footer>
   );
