@@ -12,7 +12,7 @@ export default function ContactUs() {
     const message = e.target.message.value;
 
     const phoneNumber = "528128928238"; // 
-    const url = `https://wa.me/${phoneNumber}?text=👋 Hola, soy ${name} (${email}).%0A${message}`;
+    const url = `https://wa.me/${phoneNumber}?text=👋 Hola, te estoy contactando a través de la página de contacto. Soy ${name} (${email}).%0A${message}`;
 
     // Abrir WhatsApp
     window.open(url, "_blank");
