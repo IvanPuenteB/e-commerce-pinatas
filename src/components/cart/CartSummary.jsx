@@ -35,7 +35,7 @@ export default function CartSummary({
       {/* Botón de PayPal */}
       <div className="mt-4 sm:mt-6">
         <PayPalButtons
-          style={{ layout: "horizontal" }}
+          style={{ layout: "horizontal", color: "blue", label: "pay" }}
           createOrder={(data, actions) => {
             if (
               !contactInfo.name.trim() ||

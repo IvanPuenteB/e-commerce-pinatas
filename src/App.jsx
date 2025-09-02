@@ -7,7 +7,10 @@ import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 
 const initialOptions = {
   clientId: import.meta.env.VITE_PAYPAL_CLIENT_ID,
-  currency: "MXN"
+  currency: "MXN",
+  intent: "capture",
+  components: "buttons",
+  locale: "es_MX"
 };
 
 // Lazy loading normal
